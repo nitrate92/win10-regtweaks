@@ -1,4 +1,9 @@
 # win10-regtweaks
-This repository contains Windows 10 registry tweaks that I often make use of. If you consider using the "win10-myprefs.reg" file, **please read the code comments before running it on your system. This script collection comes with no warranty.** That registery file contains a few important tweaks I make use of on almost all new Windows 10 installs to set up some generally useful options automatically, disable components of the operating system that phone home to Microsoft, etc. To see individual tweaks, look under the "registry-extras" directory.
+This repository contains useful Windows 10 registry tweaks. If you consider using the "win10-myprefs.reg" file, **please read the code comments before running it on your system. This script collection comes with no warranty.** It contains contains important tweaks I use on freshly installed copies of Windows to do the following:
+
+* Change OS settings in one click
+* Disable components of the operating system that phone home to Microsoft
+
+To see individual tweaks, look under the "registry-extras" directory.
 # Usage
-Simply double click the .reg files and click OK to apply them. Additionally, there are 2 optional PowerShell scripts. One for removing junk UWP apps, and the other for installing commonly wanted/needed programs (my personal list of stuff anyways) from winget. You can run both from an admin PowerShell console. **Read the contents of the scripts before proceeding!**
+Simply double click the .reg files and click OK to apply them. Additionally, there is an optional PowerShell script that can be run from an admin PowerShell console. It's set up to install applications from Winget, and uninstall some of the UWP apps. **Read the contents of the files before proceeding!** You are also encouraged to modify the arrays inside the script to fit your own needs.
