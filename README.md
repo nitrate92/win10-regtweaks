@@ -1,5 +1,5 @@
 # win10-regtweaks
-This repository contains useful Windows 10 registry tweaks and post-install scripts that we (HIDEN64 & nitrate92) both use. If you consider using the reg files, **please read the code comments before running it on your system. This script collection comes with no warranty.** It contains contains important tweaks we use on freshly installed copies of Windows to do the following:
+This repository contains useful Windows 10 registry tweaks and post-install scripts that we (HIDEN64 & nitrate92) both use. If you consider using the reg files, **please read the code comments before running it on your system. This script collection comes with no warranty.** It contains important tweaks we use on freshly installed copies of Windows to do the following:
 
 * Change OS settings in one click
 * Disable components of the operating system that phone home to Microsoft
