@@ -18,7 +18,7 @@ foreach ($package in $wingetPackages) {
 	Write-Host "Winget: $package" -ForegroundColor Yellow
 }
 foreach ($package in $chocolateyPackages) {
-    Write-Host "Chocolatey: $package" -ForegroundColor Yellow
+	Write-Host "Chocolatey: $package" -ForegroundColor Yellow
 }
 
 Read-Host -Prompt "Press any key to continue"
@@ -29,7 +29,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 foreach ($package in $wingetPackages) {
 	winget install $package --accept-package-agreements
 }
-foreach ($package in $chocolateyPackagesPackages) {
+foreach ($package in $chocolateyPackages) {
 	choco install $package -y
 }
 
