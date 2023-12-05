@@ -1,5 +1,5 @@
 # winget installation script. Mainly intended for LTSC, since that doesn't come with it preinstalled OOTB.
-#
+
 $elevated = ([System.Security.Principal.WindowsIdentity]::GetCurrent()).groups -match 'S-1-5-32-544'
 if (-not $elevated) {
 	Write-Host "This script requires administrative privileges. Please run it again in an elevated command prompt." -ForegroundColor Red
