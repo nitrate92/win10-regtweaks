@@ -24,6 +24,14 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
 "AllowTelemetry"=dword:00000000
 
+; disable windows error reporting
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting]
+"Disabled"=dword:00000001
+
+; disable search box on taskbar
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search]
+"SearchboxTaskbarMode"=dword:00000000
+
 ; no explorer search box suggestions from the internet
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "DisableSearchBoxSuggestions"=dword:00000001
@@ -82,3 +90,7 @@ Windows Registry Editor Version 5.00
 "TaskbarSmallIcons"=dword:00000001
 "HideFileExt"=dword:00000000
 "ShowSecondsInSystemClock"=dword:00000001
+
+; disable automatic updates
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAutoUpdate"=dword:00000001
