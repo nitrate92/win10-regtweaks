@@ -1,1 +1,4 @@
 InstalledBefore.txt
+*.appx
+*.msixbundle
+*.xml
