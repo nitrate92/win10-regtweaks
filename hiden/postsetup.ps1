@@ -2,7 +2,7 @@
 
 # 9p7knl5rwt25 = sysinternals, 9N0DX20HK701 = windows terminal
 $wingetPackages = "Microsoft.PowerToys", "9p7knl5rwt25", "7zip.7zip", "9N0DX20HK701", "VSCodium.VSCodium", "Librewolf.Librewolf", "eloston.ungoogled-chromium", "Valve.Steam", "Discord.Discord", "CrystalDewWorld.CrystalDiskInfo", "RealVNC.VNCViewer", "WiresharkFoundation.Wireshark", "Git.Git", "GitHub.GitHubDesktop", "AngusJohnson.ResourceHacker", "BleachBit.BleachBit", "Bitwarden.Bitwarden", "Notepad++.Notepad++", "Python.Python.3.11", "Microsoft.DotNet.SDK.8", "Element.Element", "Telerik.Fiddler.Classic", "Telegram.TelegramDesktop", "VMware.WorkstationPro", "EpicGames.EpicGamesLauncher", "dotPDNLLC.paintdotnet", "DuongDieuPhap.ImageGlass", "ShareX.ShareX", "OBSProject.OBSStudio", "Spotify.Spotify", "Nvidia.GeForceExperience", "qBittorrent.qBittorrent", "Microsoft.PowerShell", "StartIsBack.StartIsBack", "Mojang.MinecraftLauncher", "CodecGuide.KLiteCodecPack.Mega", "yt-dlp.yt-dlp", "cURL.cURL", "GNU.Wget2"
-$chocolateyPackages = "tenacity --pre", "photogimp", "handbreak", "inkscape", "blender", "libreoffice-fresh"
+$chocolateyPackages = "tenacity", "photogimp", "handbreak", "inkscape", "blender", "libreoffice-fresh"
 
 # 549981C3F5F10 = Cortana
 $appxToRemove = @("Microsoft.549981C3F5F10", "Microsoft.3DBuilder", "Microsoft.Appconnector", "Microsoft.BingFinance", "Microsoft.BingNews", "Microsoft.BingSports", "Microsoft.BingTranslator", "Microsoft.BingWeather", "Microsoft.FreshPaint", "Microsoft.GamingServices", "Microsoft.Microsoft3DViewer", "Microsoft.MicrosoftOfficeHub", "Microsoft.MicrosoftPowerBIForWindows", "Microsoft.MicrosoftSolitaireCollection", "Microsoft.MicrosoftStickyNotes", "Microsoft.MinecraftUWP", "Microsoft.NetworkSpeedTest", "Microsoft.Office.OneNote", "Microsoft.People", "Microsoft.Print3D", "Microsoft.SkypeApp", "Microsoft.Wallet", "Microsoft.Windows.Photos", "Microsoft.WindowsAlarms", "Microsoft.WindowsCalculator", "Microsoft.WindowsCamera", "microsoft.windowscommunicationsapps", "Microsoft.WindowsMaps", "Microsoft.WindowsPhone", "Microsoft.WindowsSoundRecorder", "Microsoft.WindowsStore", "Microsoft.Xbox.TCUI", "Microsoft.XboxApp", "Microsoft.XboxGameOverlay", "Microsoft.XboxGamingOverlay", "Microsoft.XboxSpeechToTextOverlay", "Microsoft.YourPhone", "Microsoft.ZuneMusic", "Microsoft.ZuneVideo", "Microsoft.CommsPhone", "Microsoft.ConnectivityStore", "Microsoft.GetHelp", "Microsoft.Getstarted", "Microsoft.Messaging", "Microsoft.Office.Sway", "Microsoft.OneConnect", "Microsoft.WindowsFeedbackHub", "Microsoft.Microsoft3DViewer", "Microsoft.MSPaint", "Microsoft.BingFoodAndDrink", "Microsoft.BingHealthAndFitness", "Microsoft.BingTravel", "Microsoft.WindowsReadingList", "Microsoft.MixedReality.Portal", "Microsoft.ScreenSketch", "Microsoft.XboxGamingOverlay", "Microsoft.XboxIdentityProvider", "Microsoft.YourPhone")
@@ -25,12 +25,13 @@ Read-Host -Prompt "Press any key to continue"
 
 Write-Host "Installing Chocolatey..."
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+choco feature enable -n allowGlobalConfirmation
 
 foreach ($package in $wingetPackages) {
 	winget install $package --accept-package-agreements
 }
 foreach ($package in $chocolateyPackages) {
-	choco install $package -y
+	choco install $package -y # "-y" probably isn't needed, but oh well.
 }
 
 [console]::beep(500,500)		# Beep when complete; a self reminder
